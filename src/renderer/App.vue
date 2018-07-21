@@ -13,6 +13,4 @@
   }
 </script>
 
-<style>
-  /* CSS */
-</style>
+<style lang="scss" src="./assets/styles/index.scss"></style>
