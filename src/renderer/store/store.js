@@ -11,7 +11,7 @@ export default new Vuex.Store({
         getActionList: state => state.actionList,
     },
     actions: {
-        editActionList(context, actionList) {
+        updateActionList(context, actionList) {
             context.commit('mutationActionList', actionList);
         },
     },

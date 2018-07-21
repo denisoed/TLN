@@ -13,16 +13,7 @@
     name: 'home',
     data: function () {
       return {
-        actionItems: [
-          {
-            title: 'Dead line',
-            time: '1h 40m'
-          },
-          {
-            title: 'Go home',
-            time: '4h 10m'
-          },
-        ],
+        actionItems: this.$store.getters.getActionList,
       }
     },
     components: {

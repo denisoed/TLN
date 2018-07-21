@@ -18,7 +18,7 @@
         actionModal: false,
         action: {
           title: '',
-          time: 0,
+          time: '',
         }
       }
     },
@@ -28,7 +28,7 @@
         this.$emit('EventCloseActionModal', this.actionModal)
       },
       createAction() {
-        console.log(this.action);
+        this.$store.dispatch('updateActionList', this.action);
       }
     }
   }
