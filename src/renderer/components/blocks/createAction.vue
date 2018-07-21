@@ -3,7 +3,7 @@
       <div class="wrap-modal-create-action">
         <button class="close-modal-create-action" @click="closeActionModal"><icon name="times"/></button>
         <input type="text" placeholder="Enter action title" v-model="action.title">
-        <input type="text" placeholder="Enter action time" v-model="action.time">
+        <input type="text" placeholder="Enter action minutes" v-model="action.minutes">
         <button class="addAction" @click="createAction">Add Action</button>
       </div>
     </section>
@@ -18,7 +18,7 @@
         actionModal: false,
         action: {
           title: '',
-          time: '',
+          minutes: '',
         }
       }
     },
