@@ -6,7 +6,8 @@
     align-items: center;
     box-shadow: 0px 2px 15px 0 rgba(0, 0, 0, 0.20);
     padding: 15px 0;
-    button {
+    box-sizing: border-box;
+    .open-action-modal {
         width: 30px;
         height: 30px;
         display: flex;

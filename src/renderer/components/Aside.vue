@@ -1,15 +1,31 @@
 <template>
     <aside class="aside-bar">
-      <button @click="openActionModal"><icon name="plus"/></button>
+      <div class="create-new-action">
+        <button class="open-action-modal" @click="openActionModal"><icon name="plus"/></button>
+        <createAction @EventCloseActionModal="closeActionModal" v-if="actionModal"></createAction>
+      </div>
     </aside>
 </template>
 
 <script>
+  import CreateAction from './blocks/createAction'
+  
   export default {
     name: 'aside-bar',
+    data: function () {
+      return {
+        actionModal: false,
+      }
+    },
+    components: {
+      createAction: CreateAction,
+    },
     methods: {
       openActionModal() {
-        console.log('Open!');
+        this.actionModal = true;
+      },
+      closeActionModal(event) {
+        this.actionModal = event;
       }
     },
   }
