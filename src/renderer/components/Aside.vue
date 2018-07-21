@@ -1,6 +1,6 @@
 <template>
-    <aside>
-      <h1>Aside</h1>
+    <aside class="asede-bar">
+      <button><icon name="bars"/></button>
     </aside>
 </template>
 

@@ -4,6 +4,8 @@ import axios from 'axios'
 import App from './App'
 import router from './router'
 import store from './store'
+import 'vue-awesome/icons'
+import Icon from 'vue-awesome/components/Icon'
 
 import Aside from './components/Aside.vue'
 
@@ -12,6 +14,7 @@ Vue.http = Vue.prototype.$http = axios
 Vue.config.productionTip = false
 
 Vue.component('aside-bar', Aside)
+Vue.component('icon', Icon)
 
 /* eslint-disable no-new */
 new Vue({
