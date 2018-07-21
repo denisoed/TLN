@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <div class="main-wrapper">
+      <aside-bar />
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
