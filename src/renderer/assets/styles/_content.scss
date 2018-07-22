@@ -38,7 +38,7 @@
             padding: 10px 15px;
             border-radius: 5px;
             color: #fff;
-            background-color: blueviolet;
+            background-color: $accent;
             box-shadow: 2px 2px 25px 0 rgba(0, 0, 0, 0.20);
             cursor: pointer;
         }
@@ -99,7 +99,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: blueviolet;
+        background-color: $accent;
         color: #fff;
         border-radius: 100%;
         cursor: pointer;
@@ -116,7 +116,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: blueviolet;
+        color: $accent;
         border-radius: 100%;
         z-index: 1;
         .event-action_icon {

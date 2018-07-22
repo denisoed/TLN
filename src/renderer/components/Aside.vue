@@ -4,6 +4,7 @@
         <button class="open-action-modal" @click="openActionModal"><icon name="plus"/></button>
         <createAction @EventCloseActionModal="closeActionModal" v-if="actionModal"></createAction>
       </div>
+      <router-link class="aside-item link-sprint" to="/sprint"><icon name="th-large"/></router-link>
     </aside>
 </template>
 
