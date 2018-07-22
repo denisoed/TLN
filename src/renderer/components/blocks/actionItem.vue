@@ -76,6 +76,12 @@
             this.isRunning = false
             this.isDone = true
             this.sound.pause()
+            this.notificationFinished()
+        },
+        notificationFinished() {
+            let myNotification = new Notification('Title', {
+                body: `${this.actionInfoData.title} - is done!`
+            })
         },
     }
   }
