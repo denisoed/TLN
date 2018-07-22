@@ -7,6 +7,7 @@
           {{ index }}
         </li>
       </ul>
+      <router-link :to="`/sprint-single/${this.sprintInfoData.id}`">Open Sprint</router-link>
     </div>
 </template>
 
