@@ -5,9 +5,10 @@
             <p>{{ this.actionInfoData.minutes }}</p>
             <div class="timer">{{ this.prettyTime | prettify }}</div>
         </div>
-        <button class="start-action" @click="runAction" v-if="!isRunning && !ifFinish"><icon name="stopwatch"/></button>
-        <button class="start-action" @click="pauseAction" v-if="isRunning && !ifFinish"><icon name="pause"/></button>
-        <button class="start-action" @click="finishAction" v-if="ifFinish"><icon name="times"/></button>
+        <button class="event-action" @click="runAction" v-if="!isRunning && !ifFinish && !isDone"><icon class="event-action_icon" name="stopwatch"/></button>
+        <button class="event-action" @click="pauseAction" v-if="isRunning && !ifFinish"><icon class="event-action_icon" name="pause"/></button>
+        <button class="event-action" @click="finishAction" v-if="ifFinish"><icon class="event-action_icon" name="times"/></button>
+        <div class="done-action" v-if="isDone"><icon class="event-action_icon" name="check"/></div>
     </div>
 </template>
 
@@ -21,6 +22,7 @@
       return {
         isRunning: false,
         ifFinish: false,
+        isDone: false,
         time: (this.actionInfoData.minutes * 60),
         timer:null,
         sound:new Audio(sound)
@@ -72,6 +74,7 @@
         finishAction() {
             this.ifFinish = false
             this.isRunning = false
+            this.isDone = true
             this.sound.pause()
         },
     }
