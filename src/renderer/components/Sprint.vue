@@ -3,7 +3,7 @@
       <div class="sprint-header">
         <h2>Sprints</h2>
         <div class="new-sprint">
-          <button @click="openSprintModal"><icon name="plus" /> New sprint</button>
+          <button class="create-new-sprint" @click="openSprintModal"><icon name="plus" /> New Sprint</button>
           <createSprint @EventCloseSprintModal="closeSprintModal" v-if="sprintModal"/>
         </div>
       </div>

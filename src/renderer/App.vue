@@ -2,7 +2,7 @@
   <div id="app">
     <div class="main-wrapper">
       <aside-bar />
-      <router-view></router-view>
+      <router-view class="component"></router-view>
     </div>
   </div>
 </template>

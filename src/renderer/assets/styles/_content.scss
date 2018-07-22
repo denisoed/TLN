@@ -1,6 +1,13 @@
+// --------- Main styles ------------- //
 .main-wrapper {
     display: flex;
     align-items: flex-start;
+}
+.component {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 // ---------- Model for create new ... ----------- //
@@ -51,12 +58,6 @@
     box-shadow: 2px 2px 25px 0 rgba(0, 0, 0, 0.20);
     cursor: pointer;
 }
-// ------------- Home -------------- //
-.home {
-    padding: 10px;
-    box-sizing: border-box;
-}
-
 // ------------ Action item ------------- //
 .action-item {
     width: 300px;
@@ -121,6 +122,36 @@
         .event-action_icon {
             width: 20px;
             height: 20px;
+        }
+    }
+}
+
+// --------- Create new Sprint ------------- //
+
+// ------------- Sprint ------------- //
+.sprint {
+    &-header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        h2 {
+            margin-right: 10px;
+        }
+        .new-sprint {
+            .create-new-sprint {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 12px;
+                border-radius: 5px;
+                background-color: $accent;
+                color: #fff;
+                svg {
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 5px;
+                }
+            }
         }
     }
 }
