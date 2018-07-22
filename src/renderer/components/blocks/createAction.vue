@@ -1,7 +1,7 @@
 <template>
-    <section class="modal-create-action">
-      <div class="wrap-modal-create-action">
-        <button class="close-modal-create-action" @click="closeActionModal"><icon name="times"/></button>
+    <section class="modal-create modal-create-action">
+      <div class="wrap-modal-create wrap-modal-create-action">
+        <button class="close-modal-create close-modal-create-action" @click="closeActionModal"><icon name="times"/></button>
         <input type="text" placeholder="Enter action title" v-model="action.title">
         <input type="text" placeholder="Enter action minutes" v-model="action.minutes">
         <button class="addAction" @click="createAction">Add Action</button>

@@ -3,12 +3,8 @@
     align-items: flex-start;
 }
 
-// ---------- Model for create new Action ----------- //
-.create-new-action {
-    position: relative;
-}
-
-.modal-create-action {
+// ---------- Model for create new ... ----------- //
+.modal-create {
     width: 300px;
     height: 250px;
     position: absolute;
@@ -18,7 +14,7 @@
     box-shadow: 2px 2px 25px 0 rgba(0, 0, 0, 0.20);
     border-radius: 5px;
     z-index: 10;
-    .wrap-modal-create-action {
+    .wrap-modal-create {
         width: 100%;
         height: 100%;
         display: flex;
@@ -34,15 +30,7 @@
             margin-bottom: 30px;
             border: 1px solid #ccc;
         }
-        .addAction {
-            padding: 10px 15px;
-            border-radius: 5px;
-            color: #fff;
-            background-color: blueviolet;
-            box-shadow: 2px 2px 25px 0 rgba(0, 0, 0, 0.20);
-            cursor: pointer;
-        }
-        .close-modal-create-action {
+        .close-modal-create {
             position: absolute;
             top: 15px;
             right: 15px;
@@ -51,7 +39,18 @@
         }
     }
 }
-
+// -------------- Create new action ----------- //
+.create-new-action {
+    position: relative;
+}
+.addAction {
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: $accent;
+    box-shadow: 2px 2px 25px 0 rgba(0, 0, 0, 0.20);
+    cursor: pointer;
+}
 // ------------- Home -------------- //
 .home {
     padding: 10px;
@@ -99,7 +98,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: blueviolet;
+        background-color: $accent;
         color: #fff;
         border-radius: 100%;
         cursor: pointer;
@@ -116,7 +115,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: blueviolet;
+        color: $accent;
         border-radius: 100%;
         z-index: 1;
         .event-action_icon {
