@@ -2,7 +2,10 @@
     <section class="sprint">
       <div class="sprint-header">
         <h2>Sprints</h2>
-        <button><icon name="plus" /> New sprint</button>
+        <div class="new-sprint">
+          <button @click="openSprintModal"><icon name="plus" /> New sprint</button>
+          <createSprint @EventCloseSprintModal="closeSprintModal" v-if="sprintModal"/>
+        </div>
       </div>
       <div class="sprint-body">
         <div class="sprint-list">
@@ -13,11 +16,24 @@
 </template>
 
 <script>
+  import CreateSprint from './blocks/createSprint'
+
   export default {
     name: 'sprint',
     data: function () {
       return {
-        actionModal: false,
+        sprintModal: false,
+      }
+    },
+    components: {
+      createSprint: CreateSprint,
+    },
+    methods: {
+      openSprintModal() {
+        this.sprintModal = true
+      },
+      closeSprintModal(event) {
+        this.sprintModal = event;
       }
     },
   }
