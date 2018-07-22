@@ -1,7 +1,11 @@
 <template>
     <div class="sprint-item">
-        {{ this.sprintInfoData.title }}
-        {{ this.sprintInfoData.maxDay }}
+      <h4>{{ this.sprintInfoData.title }}</h4>
+      <ul class="selected-days">
+        <li v-for="(item, index) in parseInt(this.sprintInfoData.maxDay)" :key="`item-${index}`">
+          {{ index }}
+        </li>
+      </ul>
     </div>
 </template>
 
