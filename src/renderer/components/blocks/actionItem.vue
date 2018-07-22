@@ -62,6 +62,7 @@
                         this.ifFinish = true
                         this.sound.loop = true
                         this.sound.play()
+                        this.notificationFinished()
                     }
                 }, 1000 )
             }
@@ -76,7 +77,6 @@
             this.isRunning = false
             this.isDone = true
             this.sound.pause()
-            this.notificationFinished()
         },
         notificationFinished() {
             let myNotification = new Notification('Title', {
