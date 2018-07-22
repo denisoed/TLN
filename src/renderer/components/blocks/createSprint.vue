@@ -17,6 +17,7 @@
       return {
         sprintModal: false,
         sprint: {
+          id: Math.random().toString(8).substring(4),
           title: '',
           maxDay: '',
         }

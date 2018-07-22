@@ -4,6 +4,7 @@
         <button class="close-modal-create close-modal-create-action" @click="closeActionModal"><icon name="times"/></button>
         <input type="text" placeholder="Enter action title" v-model="action.title">
         <input type="text" placeholder="Enter action minutes" v-model="action.minutes">
+        <input type="text" placeholder="Enter sprint" v-model="action.sprint">
         <button class="modal-button addAction" @click="createAction">Add Action</button>
       </div>
     </section>
@@ -19,6 +20,7 @@
         action: {
           title: '',
           minutes: '',
+          sprint: '',
         }
       }
     },
