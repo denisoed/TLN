@@ -4,7 +4,7 @@
         <button class="close-modal-create close-modal-create-sprint" @click="closeSprintModal"><icon name="times"/></button>
         <input type="text" placeholder="Enter sprint title" v-model="sprint.title">
         <input type="text" placeholder="Enter sprint duration" v-model="sprint.maxDay">
-        <button class="addSprint" @click="createSprint">Add Sprint</button>
+        <button class="modal-button addSprint" @click="createSprint">Add Sprint</button>
       </div>
     </section>
 </template>

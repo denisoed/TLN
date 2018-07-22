@@ -4,7 +4,7 @@
         <button class="close-modal-create close-modal-create-action" @click="closeActionModal"><icon name="times"/></button>
         <input type="text" placeholder="Enter action title" v-model="action.title">
         <input type="text" placeholder="Enter action minutes" v-model="action.minutes">
-        <button class="addAction" @click="createAction">Add Action</button>
+        <button class="modal-button addAction" @click="createAction">Add Action</button>
       </div>
     </section>
 </template>
@@ -22,7 +22,6 @@
         }
       }
     },
-
     methods: {
       closeActionModal() {
         this.$emit('EventCloseActionModal', this.actionModal)

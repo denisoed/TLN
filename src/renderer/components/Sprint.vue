@@ -9,7 +9,7 @@
       </div>
       <div class="sprint-body">
         <div class="sprint-list">
-          <!-- Strint item -->
+          <sprintItem v-if="sprintItems.length > 0" v-for="(item, index) in sprintItems" :key="`sprint-${index}`" :sprintInfoData="item"/>
         </div>
       </div>
     </section>
@@ -17,16 +17,19 @@
 
 <script>
   import CreateSprint from './blocks/createSprint'
+  import SprintItem from './blocks/sprintItem'
 
   export default {
     name: 'sprint',
     data: function () {
       return {
         sprintModal: false,
+        sprintItems: this.$store.getters.getSprintList
       }
     },
     components: {
       createSprint: CreateSprint,
+      sprintItem: SprintItem,
     },
     methods: {
       openSprintModal() {
