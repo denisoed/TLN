@@ -30,38 +30,3 @@
       },
     }
 </script>
-
-<style>
-  .sidebar  {
-    width: 100px;
-    height: 1000px;
-    background-color: #fff;
-    border-right: 1px solid #D3D3D3
-  }
-  .logo {
-    height: 110px;
-  }
-  .menu {
-    height: 100%;
-    margin-top: 40px;
-  }
-  .menu_icons {
-    display: flex;
-    flex-direction: column;
-  }
-  .menu_icons a {
-    text-decoration: none;
-    color: #20B2AA;
-    width: 100%;
-    height: 60px;
-    border: 5px solid transparent;
-  }
-  .menu_icons svg {
-    height: 22px;
-    width: 22px;
-    margin: 20px 35px;
-  }
-  .menu_icons a:hover {
-    border-left: 5px #20B2AA solid;
-  }
-</style>
