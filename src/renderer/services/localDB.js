@@ -7,14 +7,20 @@ db.version(1).stores({
     actions: '++id'
 });
 
-function CreateSprints(data) {
-    db.sprints.put(data).then(function () {
-        console.log("Success: " + data);
-    }).catch(function (error) {
-        console.log("Ooops: " + error);
-    });
+function CreateSprint(data) {
+    return db.sprints.put(data);
+}
+
+function getSprints() {
+    return db.sprints.toArray();
+}
+
+function delSprint(id) {
+    return db.sprints.delete(id);
 }
 
 export default {
-    CreateSprints
+    CreateSprint,
+    getSprints,
+    delSprint
 };

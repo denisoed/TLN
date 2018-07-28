@@ -7,6 +7,7 @@
           {{ index }}
         </li>
       </ul>
+      <button @click="deleteSprint(sprintInfoData.id)">Delete</button>
       <router-link :to="`/sprint-single/${this.sprintInfoData.id}`">Open Sprint</router-link>
     </div>
 </template>
@@ -20,6 +21,11 @@
         // isRunning: false,
       }
     },
+    methods: {
+      deleteSprint(id) {
+        this.$emit('EventDeleteSprint', id)
+      }
+    }
   }
 </script>
 

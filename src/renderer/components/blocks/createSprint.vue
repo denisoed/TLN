@@ -10,28 +10,32 @@
 </template>
 
 <script>
+  import localDB from '../../services/localDB'
   
   export default {
     name: 'create-sprint',
     data: function () {
       return {
-        sprintModal: false,
+        sprintModalStatus: false,
         sprint: {
-          id: Math.random().toString(8).substring(4),
+          id: Math.random().toString(15).substring(4),
           title: '',
           maxDay: '',
         }
       }
     },
-
     methods: {
       closeSprintModal() {
-        this.$emit('EventCloseSprintModal', this.sprintModal)
+        this.$emit('EventCloseSprintModal', this.sprintModalStatus)
       },
       createSprint() {
-        this.$store.dispatch('updateSprintList', this.sprint)
+        localDB.CreateSprint(this.sprint).then(function (response) {
+          console.log("Success: " + response);
+        }).catch(function (error) {
+          console.log("Ooops: " + error);
+        });
       }
-    }
+    },
   }
 </script>
 
