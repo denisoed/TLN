@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "axios": "^0.16.1",
+    "dexie": "^2.0.4",
     "mlab-data-api": "^0.2.2",
     "node-sass": "^4.9.2",
     "sass-loader": "^7.0.3",
