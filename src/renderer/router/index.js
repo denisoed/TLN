@@ -11,8 +11,8 @@ export default new Router({
       component: require('@/components/Home').default
     },
     {
-      path: '/sprint',
-      name: 'sprint',
+      path: '/sprints',
+      name: 'sprints',
       component: require('@/components/Sprint').default
     },
     {

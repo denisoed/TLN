@@ -4,7 +4,7 @@
     </div>
     <div class="menu">
         <div class="menu_icons">
-          <a href="#"><icon name="clone" size="lg"></icon></a>
+          <router-link to="/sprints"><icon name="th-large"/></router-link>
           <a href="#"><icon name="user-friends"></icon></a>
           <a href="#"><icon name="user"></icon></a>
           <a href="#"><icon name="file-alt"></icon></a>
