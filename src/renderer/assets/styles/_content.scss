@@ -9,7 +9,11 @@
     padding: 10px;
     box-sizing: border-box;
 }
-
+.flash-message {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+}
 // ---------- Model for create new ... ----------- //
 .modal-create {
     width: 300px;

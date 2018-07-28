@@ -43,12 +43,16 @@
       gelAllSprints() {
         localDB.getSprints().then(sprints => {
           this.sprintItemsList = sprints;
+        }).catch(error => {
+          this.flash(error, 'error');
         })
       },
       deleteSprint(id) {
         localDB.delSprint(id).then(response => {
-          console.log("Success: " + response);
+          this.flash('Sprint deleted', 'success');
           this.gelAllSprints();
+        }).catch(error => {
+          this.flash(error, 'error');
         })
       }
     },
