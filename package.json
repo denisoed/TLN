@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "axios": "^0.16.1",
+    "mlab-data-api": "^0.2.2",
     "node-sass": "^4.9.2",
     "sass-loader": "^7.0.3",
     "vue": "^2.3.3",
