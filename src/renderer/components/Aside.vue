@@ -1,8 +1,8 @@
 <template>
   <div class="sidebar">
-    <div class="logo">
+    <a href="/" class="logo">
       <img src="../assets/time_logo.svg" alt="">
-    </div>
+    </a>
     <div class="menu">
         <div class="menu_icons">
           <router-link to="/sprints"><icon name="th-large"/></router-link>

@@ -3,7 +3,7 @@
       <div class="wrap-modal-create wrap-modal-create-sprint">
         <button class="close-modal-create close-modal-create-sprint" @click="closeSprintModal"><icon name="times"/></button>
         <input type="text" placeholder="Enter sprint title" v-model="sprint.title">
-        <input type="text" placeholder="Enter sprint duration" v-model="sprint.maxDay">
+        <input type="text" placeholder="Enter sprint duration" v-model="sprint.sprintDuration">
         <button class="modal-button addSprint" @click="createSprint">Add Sprint</button>
       </div>
     </section>
@@ -20,7 +20,7 @@
         sprint: {
           id: Math.random().toString(15).substring(4),
           title: '',
-          maxDay: '',
+          sprintDuration: '',
         }
       }
     },
@@ -29,10 +29,10 @@
         this.$emit('EventCloseSprintModal', this.sprintModalStatus)
       },
       createSprint() {
-        localDB.CreateSprint(this.sprint).then(function (response) {
-          console.log("Success: " + response);
-        }).catch(function (error) {
-          console.log("Ooops: " + error);
+        localDB.CreateSprint(this.sprint).then(res => {
+          this.flash("Sprint created", 'success');
+        }).catch(error => {
+          this.flash(error, 'error');
         });
       }
     },
