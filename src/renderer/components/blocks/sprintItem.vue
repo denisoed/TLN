@@ -3,11 +3,11 @@
       <h4>{{ this.sprintInfoData.id }}</h4>
       <h4>{{ this.sprintInfoData.title }}</h4>
       <ul class="selected-days">
-        <li v-for="(item, index) in parseInt(this.sprintInfoData.maxDay)" :key="`item-${index}`">
+        <li v-if="sprintInfoData.length > 0" v-for="(item, index) in parseInt(this.sprintInfoData.sprintDuration)" :key="`item-${index}`">
           {{ index }}
         </li>
       </ul>
-      <button @click="deleteSprint(sprintInfoData.id)">Delete</button>
+      <button class="remove-sprint" @click="deleteSprint(sprintInfoData.id)">Remove sprint</button>
       <router-link :to="`/sprint-single/${this.sprintInfoData.id}`">Open Sprint</router-link>
     </div>
 </template>

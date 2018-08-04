@@ -20,7 +20,7 @@
         action: {
           title: '',
           minutes: '',
-          sprint: '',
+          sprintID: '',
         }
       }
     },
