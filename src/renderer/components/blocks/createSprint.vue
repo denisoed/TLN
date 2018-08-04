@@ -4,7 +4,17 @@
         <button class="close-modal-create close-modal-create-sprint" @click="closeSprintModal"><icon name="times"/></button>
         <input type="text" placeholder="Title" v-model="sprint.title">
         <input type="text" placeholder="Your Work Time" v-model="sprint.workTime">
-        <input type="text" placeholder="Notification interval" v-model="sprint.notificationInterval">
+        <div class="interval-time">
+          <label>
+            <input type="radio" name="interval" value="hours" v-model="sprint.notificationInterval.type">
+            Hours
+          </label>
+          <label>
+            <input type="radio" name="interval" value="minutes" v-model="sprint.notificationInterval.type">
+            Minutes
+          </label>
+          <input type="text" placeholder="Notification interval" v-model="sprint.notificationInterval.value">
+        </div>
         <input type="text" placeholder="Days" v-model="sprint.sprintDuration">
         <button class="modal-button addSprint" @click="createSprint">Add Sprint</button>
       </div>
@@ -23,7 +33,10 @@
           id: Math.random().toString(15).substring(4),
           title: '',
           workTime: '',
-          notificationInterval: '',
+          notificationInterval: {
+            type: 'hours',
+            value: '',
+          },
           sprintDuration: '',
         },
         action: {
@@ -45,9 +58,12 @@
           this.flash(error, 'error');
         });
       },
+      aaa() {
+        console.log(this.sprint.notificationInterval.type);
+      },
       createActions() {
         this.action.sprintID = this.sprint.id;
-        this.action.minutes = this.sprint.notificationInterval;
+        this.action.minutes = this.sprint.notificationInterval.value;
 
         for (let i = 0; i < this.sprint.sprintDuration; i++) {
           for (let j = 0; j < this.sprint.workTime / this.sprint.notificationInterval; j++) {

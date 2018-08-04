@@ -176,6 +176,12 @@
             height: 15px;
         }
     }
+    .interval-time {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .sprint-item {
