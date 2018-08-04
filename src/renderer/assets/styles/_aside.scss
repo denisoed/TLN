@@ -1,49 +1,27 @@
 .sidebar {
-    width: 50px;
+    width: 55px;
     height: 100vh;
     position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: end;
     border-right: 1px solid #D3D3D3;
-    background: linear-gradient(to top, #ADD8E6, $accent);
-    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.2);
-}
-.logo {
-    height: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    img {
-        height: 28px;
-        width: 28px
-    }
+    background-color: #283149;
 }
 .menu_icons {
     display: flex;
     flex-direction: column;
     a {
         width: 100%;
-        height: 45px;
+        height: 60px;
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
         text-decoration: none;
-        color: #fff;
-        &::before {
-            content: '';
-            width: 3px;
-            height: 100%;
-            position: absolute;
-            left: 0;
-            top: 0;
-            background-color: $accent;
-            opacity: 0;
-        }
+        color: #525D76;
         &:hover {
-            background-color: lighten($accent, 7%);
+            color: #DEDDEE;
             opacity: 1.0;
             &::before {
                 content: '';
@@ -51,18 +29,22 @@
             }
         }
         svg {
-            height: 16px;
-            width: 16px;
+            width: 20px;
+            height: 20px;
         }
     }
 }
 .settings_button {
     margin-top: auto;
     margin-bottom: 10px;
-    color: darken($accent, 11%);
+    color: #525D76;
     opacity: 0.8;
     cursor: pointer;
     &:hover {
-        opacity: 1.0;
+        color: #DEDDEE;
+    }
+    svg {
+        width: 20px;
+        height: 20px;
     }
 }
