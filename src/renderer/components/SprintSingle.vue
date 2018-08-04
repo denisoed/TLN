@@ -25,7 +25,7 @@
     },
     methods: {
       getActionsBySprintID() {
-        localDB.getActionsBySprintID(this.sprintID).then(actions => {
+        localDB.GetActionsBySprintID(this.sprintID).then(actions => {
           this.actionItems = actions;
         }).catch(error => {
           this.flash(error, 'error');

@@ -41,14 +41,14 @@
         this.gelAllSprints();
       },
       gelAllSprints() {
-        localDB.getSprints().then(sprints => {
+        localDB.GetSprints().then(sprints => {
           this.sprintItemsList = sprints;
         }).catch(error => {
           this.flash(error, 'error');
         })
       },
       deleteSprint(id) {
-        localDB.delSprint(id).then(response => {
+        localDB.DelSprint(id).then(response => {
           this.flash('Sprint deleted', 'success');
           this.gelAllSprints();
         }).catch(error => {
