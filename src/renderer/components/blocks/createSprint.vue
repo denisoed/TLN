@@ -2,36 +2,80 @@
     <section class="modal-create modal-create-sprint">
       <div class="wrap-modal-create wrap-modal-create-sprint">
         <button class="close-modal-create close-modal-create-sprint" @click="closeSprintModal"><icon name="times"/></button>
-        <input type="text" placeholder="Enter sprint title" v-model="sprint.title">
-        <input type="text" placeholder="Enter sprint duration" v-model="sprint.maxDay">
+        <input type="text" placeholder="Title" v-model="sprint.title">
+        <input type="text" placeholder="Your Work Time" v-model="sprint.workTime">
+        <div class="interval-time">
+          <label>
+            <input type="radio" name="interval" value="hours" v-model="sprint.notificationInterval.type">
+            Hours
+          </label>
+          <label>
+            <input type="radio" name="interval" value="minutes" v-model="sprint.notificationInterval.type">
+            Minutes
+          </label>
+          <input type="text" placeholder="Notification interval" v-model="sprint.notificationInterval.value">
+        </div>
+        <input type="text" placeholder="Days" v-model="sprint.sprintDuration">
         <button class="modal-button addSprint" @click="createSprint">Add Sprint</button>
       </div>
     </section>
 </template>
 
 <script>
+  import localDB from '../../services/localDB'
   
   export default {
     name: 'create-sprint',
     data: function () {
       return {
-        sprintModal: false,
+        sprintModalStatus: false,
         sprint: {
-          id: Math.random().toString(8).substring(4),
+          id: Math.random().toString(15).substring(4),
           title: '',
-          maxDay: '',
+          workTime: '',
+          notificationInterval: {
+            type: 'hours',
+            value: '',
+          },
+          sprintDuration: '',
+        },
+        action: {
+          title: '',
+          minutes: '',
+          sprintID: '',
         }
       }
     },
-
     methods: {
       closeSprintModal() {
-        this.$emit('EventCloseSprintModal', this.sprintModal)
+        this.$emit('EventCloseSprintModal', this.sprintModalStatus)
       },
       createSprint() {
-        this.$store.dispatch('updateSprintList', this.sprint)
-      }
-    }
+        localDB.CreateSprint(this.sprint).then(res => {
+          this.flash("Sprint created", 'success');
+          this.createActions();
+        }).catch(error => {
+          this.flash(error, 'error');
+        });
+      },
+      aaa() {
+        console.log(this.sprint.notificationInterval.type);
+      },
+      createActions() {
+        this.action.sprintID = this.sprint.id;
+        this.action.minutes = this.sprint.notificationInterval.value;
+
+        for (let i = 0; i < this.sprint.sprintDuration; i++) {
+          for (let j = 0; j < this.sprint.workTime / this.sprint.notificationInterval; j++) {
+            localDB.CreateAction(this.action).then(res => {
+              this.flash("Action created", 'success');
+            }).catch(error => {
+              this.flash(error, 'error');
+            });    
+          }
+        }
+      },
+    },
   }
 </script>
 

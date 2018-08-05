@@ -8,12 +8,17 @@
     height: 100%;
     padding: 10px;
     box-sizing: border-box;
+    margin-left: 50px;
 }
-
+.flash-message {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+}
 // ---------- Model for create new ... ----------- //
 .modal-create {
     width: 300px;
-    height: 250px;
+    min-height: 250px;
     position: absolute;
     top: 0;
     left: 40px;
@@ -130,28 +135,15 @@
 
 // ------------- Sprint ------------- //
 .sprint {
+    width: 100%;
+    height: 100vh;
+    position: relative;
     &-header {
         display: flex;
         align-items: center;
         justify-content: flex-start;
         h2 {
             margin-right: 10px;
-        }
-        .new-sprint {
-            .create-new-sprint {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 12px;
-                border-radius: 5px;
-                background-color: $accent;
-                color: #fff;
-                svg {
-                    width: 10px;
-                    height: 10px;
-                    margin-right: 5px;
-                }
-            }
         }
     }
     &-body {
@@ -165,6 +157,31 @@
         align-items: flex-start;
         flex-wrap: wrap;
     }
+    .create-new-sprint {
+        width: 45px;
+        height: 45px;
+        position: fixed;
+        right: 15px;
+        bottom: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px;
+        border-radius: 100%;
+        background-color: $accent;
+        color: #fff;
+        box-shadow: 2px 2px 25px 0 rgba(0, 0, 0, 0.20);
+        svg {
+            width: 15px;
+            height: 15px;
+        }
+    }
+    .interval-time {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .sprint-item {
@@ -173,7 +190,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-around;
     margin: 0 10px;
     padding: 10px;
     box-sizing: border-box;
@@ -181,6 +198,11 @@
     border-radius: 5px;
     position: relative;
     overflow: hidden;
+    .remove-sprint {
+        cursor: pointer;
+        background-color: red;
+        color: #fff;
+    }
     .selected-days {
         display: flex;
         li {

@@ -3,6 +3,7 @@
     <div class="main-wrapper">
       <aside-bar />
       <router-view class="component"></router-view>
+      <flash-message class="flash-message"></flash-message>
     </div>
   </div>
 </template>
