@@ -1,3 +1,4 @@
+
 .sidebar {
     width: 55px;
     height: 100vh;
@@ -7,6 +8,7 @@
     justify-content: end;
     border-right: 1px solid #D3D3D3;
     background-color: #283149;
+    padding-top: 60px;
 }
 .menu_icons {
     display: flex;
@@ -36,7 +38,7 @@
 }
 .settings_button {
     margin-top: auto;
-    margin-bottom: 10px;
+    margin-bottom: 70px;
     color: #525D76;
     opacity: 0.8;
     cursor: pointer;
