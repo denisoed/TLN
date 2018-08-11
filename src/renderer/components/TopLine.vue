@@ -2,9 +2,9 @@
   <div class="top_line">
       <div class="top-line-menu">
         <div class="left-side">
-          <div class="logo">
+          <a href="/" class="logo">
             <icon name="chart-pie"></icon>
-          </div>
+          </a>
           </div>
           <div class="right-side">
               <a href="#" class="btn-go-pro">GO PRO</a>

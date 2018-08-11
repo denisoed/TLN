@@ -1,10 +1,11 @@
 <template>
   <div id="app">
     <div class="main-wrapper">
+      <flash-message class="flash-message"></flash-message>
       <top-line />
       <aside-bar />
       <router-view class="component"></router-view>
-      <flash-message class="flash-message"></flash-message>
+      <active-day />
     </div>
   </div>
 </template>

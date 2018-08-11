@@ -17,6 +17,7 @@ body {
     position: fixed;
     right: 10px;
     top: 10px;
+    z-index: 11;
 }
 // ---------- Model for create new ... ----------- //
 .modal-create {
@@ -254,6 +255,42 @@ body {
                 align-items: center;
                 padding: 5px 0 20px;
             }
+        }
+    }
+}
+
+// ----------- Active day -------------- //
+.active-day {
+    width: 320px;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    &_header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+        box-sizing: border-box;
+        cursor: pointer;
+        background-color: $accent;
+        h4 {
+            color: $white;
+        }
+        .toggle-active-day {
+            svg {
+                fill: $white;
+            }
+        }
+    }
+    &_body {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px;
+        box-sizing: border-box;
+        .active-day_control-panel {
+            margin-top: 15px;
         }
     }
 }
