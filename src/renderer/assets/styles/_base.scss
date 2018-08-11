@@ -14,8 +14,12 @@ button {
     border: none;
 }
 
+// -------- Fonts --------- //
+@import url("https://fonts.googleapis.com/css?family=Arvo|Indie+Flower|Nunito");
+
 // ------- Colors --------- //
 $accent: #5088FF;
+$main-dark: #2c3048;
 
 // --------- Animation styles ------------ //
 .slide-enter-active,
