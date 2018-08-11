@@ -1,24 +1,52 @@
-.aside-bar {
-    width: 60px;
+
+.sidebar {
+    width: 55px;
     height: 100vh;
+    position: fixed;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    box-shadow: 0px 2px 15px 0 rgba(0, 0, 0, 0.20);
-    padding: 15px 0;
-    box-sizing: border-box;
-    .open-action-modal {
-        width: 30px;
-        height: 30px;
+    justify-content: end;
+    border-right: 1px solid #D3D3D3;
+    background-color: #283149;
+    padding-top: 60px;
+}
+.menu_icons {
+    display: flex;
+    flex-direction: column;
+    a {
+        width: 100%;
+        height: 60px;
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 100%;
-        background-color: #fff;
-        box-shadow: 1px 1px 15px 0 rgba(0, 0, 0, 0.50);
-        cursor: pointer;
+        text-decoration: none;
+        color: #525D76;
+        &:hover {
+            color: #DEDDEE;
+            opacity: 1.0;
+            &::before {
+                content: '';
+                opacity: 1;
+            }
+        }
+        svg {
+            width: 20px;
+            height: 20px;
+        }
     }
-    .aside-item {
-        margin-top: 20px;
+}
+.settings_button {
+    margin-top: auto;
+    margin-bottom: 70px;
+    color: #525D76;
+    opacity: 0.8;
+    cursor: pointer;
+    &:hover {
+        color: #DEDDEE;
+    }
+    svg {
+        width: 20px;
+        height: 20px;
     }
 }

@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <div class="main-wrapper">
+      <top-line />
       <aside-bar />
       <router-view class="component"></router-view>
+      <flash-message class="flash-message"></flash-message>
     </div>
   </div>
 </template>
