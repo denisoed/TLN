@@ -6,12 +6,12 @@
         <input type="text" placeholder="Your Work Time" v-model="sprint.workTime">
         <div class="interval-time">
           <label>
-            <input type="radio" name="interval" value="hours" v-model="sprint.notificationInterval.type">
-            Hours
-          </label>
-          <label>
             <input type="radio" name="interval" value="minutes" v-model="sprint.notificationInterval.type">
             Minutes
+          </label>
+          <label>
+            <input type="radio" name="interval" value="hours" v-model="sprint.notificationInterval.type">
+            Hours
           </label>
           <input type="text" placeholder="Notification interval" v-model="sprint.notificationInterval.value">
         </div>
@@ -34,7 +34,7 @@
           title: '',
           workTime: '',
           notificationInterval: {
-            type: 'hours',
+            type: 'minutes',
             value: '',
           },
           sprintDuration: '',
@@ -58,22 +58,42 @@
           this.flash(error, 'error');
         });
       },
-      aaa() {
-        console.log(this.sprint.notificationInterval.type);
-      },
       createActions() {
         this.action.sprintID = this.sprint.id;
-        this.action.minutes = this.sprint.notificationInterval.value;
-
-        for (let i = 0; i < this.sprint.sprintDuration; i++) {
-          for (let j = 0; j < this.sprint.workTime / this.sprint.notificationInterval; j++) {
-            localDB.CreateAction(this.action).then(res => {
-              this.flash("Action created", 'success');
-            }).catch(error => {
-              this.flash(error, 'error');
-            });    
-          }
+        if (this.sprint.notificationInterval.type == 'minutes') {
+          const interval = this.generateIntervalValue(this.sprint.notificationInterval.value);
+          this.generateActions(interval);
+        } else {
+          const interval = this.generateIntervalValue(this.sprint.notificationInterval.value * 60);
+          this.generateActions(interval);
         }
+      },
+      generateActions(array) {
+        for (let i = 0; i < array.length; i++) {
+          this.action.minutes = array[i];
+          localDB.CreateAction(this.action).then(res => {
+            this.flash("Action created", 'success');
+          }).catch(error => {
+            this.flash(error, 'error');
+          });  
+        }
+      },
+      generateIntervalValue(minutes) {
+        const intervalArray = [];
+
+        let workTimeToMinutes = this.sprint.workTime * 60,
+            intervalInteger = Math.floor((workTimeToMinutes / minutes)),
+            intervalRemainder = workTimeToMinutes - (intervalInteger * minutes);
+        
+        for (let i = 0; i < intervalInteger; i++) {
+          intervalArray.push(Number(minutes))
+        }
+
+        if (intervalRemainder != 0) {
+          intervalArray.push(intervalRemainder);
+        }
+
+        return intervalArray;
       },
     },
   }
