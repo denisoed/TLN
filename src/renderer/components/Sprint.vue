@@ -2,9 +2,9 @@
     <section class="sprint">
       <div class="sprint-header">
         <h2>Sprints</h2>
-        <div class="new-sprint">
+        <transition name="slide">
           <createSprint @EventCloseSprintModal="closeSprintModal" v-if="sprintModal"/>
-        </div>
+        </transition>
       </div>
       <div class="sprint-body">
         <div class="sprint-list">
@@ -34,7 +34,7 @@
     },
     methods: {
       openSprintModal() {
-        this.sprintModal = true
+        this.sprintModal = !this.sprintModal;
       },
       closeSprintModal(event) {
         this.sprintModal = event;
