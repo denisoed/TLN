@@ -1,8 +1,16 @@
 <template>
     <section class="sprint-single">
         <h1>Sprint Single: {{ this.sprintID }}</h1>
-        <div class="list-actions">
-          <actionItem v-if="actionItems.length > 0" v-for="(item, index) in actionItems" :key="`action-${index}`" :actionInfoData="item"/>
+        <div class="sprint-days">
+          <div class="list-actions" v-for="(sprint, index) in sprintData.sprintDuration" :key="`day-${index}`">
+            <div class="list-actions_info">
+              <div class="days">
+                Day: {{ index + 1 }}
+              </div>
+              <button class="settings_day"><icon name="cog"></icon></button>
+            </div>
+            <actionItem v-if="actionItems.length > 0" v-for="(item, index) in actionItems" :key="`action-${index}`" :actionInfoData="item"/>
+          </div>
         </div>
     </section>
 </template>
@@ -17,6 +25,7 @@
       return {
         sprintID: this.$route.params.id, 
         sprintModal: false,
+        sprintData: '',
         actionItems: '',
       }
     },
@@ -30,9 +39,18 @@
         }).catch(error => {
           this.flash(error, 'error');
         })
-      }
+      },
+      getSprintData() {
+        localDB.GetSprint(this.sprintID).then(sprint => {
+          this.sprintData = sprint;
+          console.log(sprint);
+        }).catch(error => {
+          this.flash(error, 'error');
+        })
+      },
     },
     mounted() {
+      this.getSprintData();
       this.getActionsBySprintID();
     },
   }

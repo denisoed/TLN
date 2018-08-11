@@ -15,7 +15,7 @@
           </label>
           <input type="text" placeholder="Notification interval" v-model="sprint.notificationInterval.value">
         </div>
-        <input type="text" placeholder="Days" v-model="sprint.sprintDuration">
+        <input type="text" placeholder="Days" v-model.number="sprint.sprintDuration">
         <button class="modal-button addSprint" @click="createSprint">Add Sprint</button>
       </div>
     </section>

@@ -1,8 +1,10 @@
+body {
+    background-color: $white-bg;
+}
 // --------- Main styles ------------- //
 .main-wrapper {
     display: flex;
     align-items: flex-start;
-    background-color: $main-dark;
 }
 .component {
     width: 100%;
@@ -23,8 +25,8 @@
     position: absolute;
     top: 0;
     left: 40px;
-    background-color: #fff;
-    box-shadow: 2px 2px 25px 0 rgba(0, 0, 0, 0.20);
+    background-color: $main-dark;
+    box-shadow: 3px 0px 5px -4px rgba(0, 0, 0, 0.75);
     z-index: 1;
     .wrap-modal-create {
         width: 100%;
@@ -65,7 +67,8 @@
 }
 // ------------ Action item ------------- //
 .action-item {
-    width: 300px;
+    width: 100%;
+    min-height: 55px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -219,6 +222,38 @@
             padding: 5px;
             border-radius: 2px;
             margin: 0 5px;
+        }
+    }
+}
+// ------------ Single sprint ------------- //
+.sprint-single {
+    .sprint-days {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding: 30px;
+        box-sizing: border-box;
+        .list-actions {
+            width: 320px;
+            height: 360px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 15px;
+            margin: 0 15px 30px;
+            box-sizing: border-box;
+            background-color: $white;
+            border: 2px solid $grey;
+            border-radius: 5px;
+            overflow-y: scroll;
+            &_info {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 5px 0 20px;
+            }
         }
     }
 }

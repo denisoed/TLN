@@ -12,6 +12,10 @@ export default {
         return db.sprints.put(data);
     },
     
+    GetSprint: function(id) {
+        return db.sprints.get(id);
+    },
+
     GetSprints: function() {
         return db.sprints.toArray();
     },
