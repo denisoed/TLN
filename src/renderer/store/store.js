@@ -5,27 +5,19 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        actionList: [],
-        sprintList: [],
+        sprintActive: '',
     },
     getters: {
-        getActionList: state => state.actionList,
-        getSprintList: state => state.sprintList,
+        getSprintActive: state => state.sprintActive,
     },
     actions: {
-        updateActionList(context, actionList) {
-            context.commit('mutationActionList', actionList);
-        },
-        updateSprintList(context, sprintList) {
-            context.commit('mutationSprintList', sprintList);
+        updateSprintActive(context, id) {
+            context.commit('mutationSprintActive', id);
         },
     },
     mutations: {
-        mutationActionList(state, payload) {
-            this.state.actionList.push(payload);
-        },
-        mutationSprintList(state, payload) {
-            this.state.sprintList.push(payload);
+        mutationSprintActive(state, payload) {
+            this.state.sprintActive = payload;
         },
     },
 });

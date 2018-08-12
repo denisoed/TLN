@@ -59,7 +59,7 @@
         const data = {
           key: 'id',
           id: id,
-          modifyValue: { active: true },
+          modifyValue: { active: 'true' },
         }
 
         for (let i = 0; i < this.sprintItemsList.length; i++) {
@@ -76,7 +76,7 @@
         const data = {
           key: 'id',
           id: id,
-          modifyValue: { active: false },
+          modifyValue: { active: 'false' },
         }
         localDB.UpdateSprint(data).then(response => {
           this.flash('Sprints updated', 'success');

@@ -43,7 +43,6 @@
       getSprintData() {
         localDB.GetSprint(this.sprintID).then(sprint => {
           this.sprintData = sprint;
-          console.log(sprint);
         }).catch(error => {
           this.flash(error, 'error');
         })

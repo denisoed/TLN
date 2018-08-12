@@ -3,7 +3,7 @@ import Dexie from 'dexie';
 // Declare Database
 var db = new Dexie("tln");
 db.version(1).stores({ 
-    sprints: "++id",
+    sprints: "++id,active",
     actions: "++id,sprintID"
 });
 

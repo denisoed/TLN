@@ -1,7 +1,7 @@
 <template>
     <div class="active-sprint">
         <div class="active-sprint_header">
-            <h4>Active day of sprint</h4>
+            <h4>{{ this.sprintInfoData.title }}</h4>
             <div class="toggle-active-sprint">
                 <icon name="sort-up"></icon>
             </div>
@@ -20,10 +20,10 @@
 <script>
   export default {
     name: 'active-sprint',
-    props: ['activeSprint'],
+    props: ['sprintInfoData'],
     data: function () {
       return {
-        // isRunning: false,
+        // sprintData: '',
       }
     },
   }

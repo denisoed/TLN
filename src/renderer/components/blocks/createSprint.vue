@@ -38,8 +38,8 @@
             value: '',
           },
           sprintDuration: '',
-          active: false,
-          done: false,
+          active: 'false',
+          done: 'false',
         },
         action: {
           title: '',
