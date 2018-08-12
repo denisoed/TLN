@@ -5,7 +5,7 @@
       <top-line />
       <aside-bar />
       <router-view class="component"></router-view>
-      <active-day />
+      <active-sprint />
     </div>
   </div>
 </template>

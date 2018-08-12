@@ -260,7 +260,7 @@ body {
 }
 
 // ----------- Active day -------------- //
-.active-day {
+.active-sprint {
     width: 320px;
     position: fixed;
     bottom: 0;
@@ -278,7 +278,7 @@ body {
         h4 {
             color: $white;
         }
-        .toggle-active-day {
+        .toggle-active-sprint {
             svg {
                 fill: $white;
             }
@@ -291,7 +291,7 @@ body {
         padding: 10px;
         box-sizing: border-box;
         background-color: $white;
-        .active-day_control-panel {
+        .active-sprint_control-panel {
             margin-top: 15px;
         }
     }

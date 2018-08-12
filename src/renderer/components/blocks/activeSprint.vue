@@ -1,16 +1,16 @@
 <template>
-    <div class="active-day">
-        <div class="active-day_header">
+    <div class="active-sprint">
+        <div class="active-sprint_header">
             <h4>Active day of sprint</h4>
-            <div class="toggle-active-day">
+            <div class="toggle-active-sprint">
                 <icon name="sort-up"></icon>
             </div>
         </div>
-        <div class="active-day_body">
-            <div class="active-day_info">
+        <div class="active-sprint_body">
+            <div class="active-sprint_info">
                 12:34
             </div>
-            <div class="active-day_control-panel">
+            <div class="active-sprint_control-panel">
                 <button class="pause-active-action"><icon name="pause"></icon></button>
             </div>
         </div>
@@ -19,8 +19,8 @@
 
 <script>
   export default {
-    name: 'active-day',
-    props: ['activeDay'],
+    name: 'active-sprint',
+    props: ['activeSprint'],
     data: function () {
       return {
         // isRunning: false,
