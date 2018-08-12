@@ -5,33 +5,14 @@
       <top-line />
       <aside-bar />
       <router-view class="component"></router-view>
-      <active-sprint :sprintInfoData="sprintData" />
+      <active-sprint />
     </div>
   </div>
 </template>
 
 <script>
-  import localDB from './services/localDB';
-
   export default {
     name: 'tln',
-    data: function () {
-      return {
-        sprintData: '',
-      }
-    },
-    methods: {
-      getActiveSprint() {
-        localDB.GetSprint({ active: 'true' }).then(sprint => {
-          this.sprintData = sprint;
-        }).catch(error => {
-          this.flash(error, 'error');
-        })
-      }
-    },
-    mounted() {
-      this.getActiveSprint();
-    },
   }
 </script>
 

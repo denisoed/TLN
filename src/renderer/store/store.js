@@ -11,8 +11,8 @@ export default new Vuex.Store({
         getSprintActive: state => state.sprintActive,
     },
     actions: {
-        updateSprintActive(context, id) {
-            context.commit('mutationSprintActive', id);
+        updateSprintActive(context, sprintActive) {
+            context.commit('mutationSprintActive', sprintActive);
         },
     },
     mutations: {
