@@ -19,7 +19,11 @@ export default {
     GetSprints: function() {
         return db.sprints.toArray();
     },
-    
+
+    UpdateSprint: function(data) {
+        return db.sprints.where(data.key).equals(data.id).modify(data.modifyValue);
+    },
+
     DelSprint: function(id) {
         return db.sprints.delete(id);
     },

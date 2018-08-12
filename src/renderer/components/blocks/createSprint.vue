@@ -38,6 +38,8 @@
             value: '',
           },
           sprintDuration: '',
+          active: false,
+          done: false,
         },
         action: {
           title: '',
@@ -49,6 +51,13 @@
     methods: {
       closeSprintModal() {
         this.$emit('EventCloseSprintModal', this.sprintModalStatus)
+      },
+      gelAllSprints() {
+        localDB.GetSprints().then(sprints => {
+          this.sprintItemsList = sprints;
+        }).catch(error => {
+          this.flash(error, 'error');
+        })
       },
       createSprint() {
         localDB.CreateSprint(this.sprint).then(res => {

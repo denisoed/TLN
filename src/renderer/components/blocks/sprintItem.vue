@@ -1,5 +1,9 @@
 <template>
     <div class="sprint-item">
+      <label>
+        Active
+        <input @click="setActiveSprint(sprintInfoData.id)" type="radio" name="active-sprint">
+      </label>
       <h4>{{ this.sprintInfoData.id }}</h4>
       <h4>{{ this.sprintInfoData.title }}</h4>
       <ul class="selected-days">
@@ -23,7 +27,10 @@
     },
     methods: {
       deleteSprint(id) {
-        this.$emit('EventDeleteSprint', id)
+        this.$emit('EventDeleteSprint', id);
+      },
+      setActiveSprint(id) {
+        this.$emit('EventSetActiveSprint', id);
       }
     }
   }

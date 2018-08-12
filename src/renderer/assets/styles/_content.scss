@@ -174,7 +174,7 @@ body {
         height: 45px;
         position: fixed;
         right: 15px;
-        bottom: 15px;
+        top: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -265,6 +265,7 @@ body {
     position: fixed;
     bottom: 0;
     right: 15px;
+    z-index: 10;
     &_header {
         width: 100%;
         display: flex;
@@ -289,6 +290,7 @@ body {
         flex-direction: column;
         padding: 10px;
         box-sizing: border-box;
+        background-color: $white;
         .active-day_control-panel {
             margin-top: 15px;
         }

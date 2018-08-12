@@ -8,7 +8,7 @@
       </div>
       <div class="sprint-body">
         <div class="sprint-list">
-          <sprintItem @EventDeleteSprint="deleteSprint" v-if="sprintItemsList.length > 0" v-for="(item, index) in sprintItemsList" :key="`sprint-${index}`" :sprintInfoData="item"/>
+          <sprintItem @EventSetActiveSprint="setActiveSprint" @EventDeleteSprint="deleteSprint" v-if="sprintItemsList.length > 0" v-for="(item, index) in sprintItemsList" :key="`sprint-${index}`" :sprintInfoData="item"/>
         </div>
       </div>
       <button class="create-new-sprint" @click="openSprintModal"><icon name="plus" /></button>
@@ -54,7 +54,36 @@
         }).catch(error => {
           this.flash(error, 'error');
         })
-      }
+      },
+      setActiveSprint(id) {
+        const data = {
+          key: 'id',
+          id: id,
+          modifyValue: { active: true },
+        }
+
+        for (let i = 0; i < this.sprintItemsList.length; i++) {
+          this.updateSprints(this.sprintItemsList[i].id);
+        }
+
+        localDB.UpdateSprint(data).then(response => {
+          this.flash('Sprint updated', 'success');
+        }).catch(error => {
+          this.flash(error, 'error');
+        })
+      },
+      updateSprints(id) {
+        const data = {
+          key: 'id',
+          id: id,
+          modifyValue: { active: false },
+        }
+        localDB.UpdateSprint(data).then(response => {
+          this.flash('Sprints updated', 'success');
+        }).catch(error => {
+          this.flash(error, 'error');
+        })
+      },
     },
     mounted() {
       this.gelAllSprints();
