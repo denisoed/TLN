@@ -65,9 +65,10 @@
         for (let i = 0; i < this.sprintItemsList.length; i++) {
           this.updateSprints(this.sprintItemsList[i].id);
         }
-
         localDB.UpdateSprint(data).then(response => {
           this.flash('Sprint updated', 'success');
+          this.$emit('EventUpdateActiveSprint', id);
+        this.gelAllSprints();
         }).catch(error => {
           this.flash(error, 'error');
         })

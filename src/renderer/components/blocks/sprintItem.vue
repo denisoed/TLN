@@ -2,7 +2,7 @@
     <div class="sprint-item">
       <label>
         Active
-        <input @click="setActiveSprint(sprintInfoData.id)" type="radio" name="active-sprint">
+        <input @click="setActiveSprint(sprintInfoData.id)" type="radio" name="active-sprint" :checked="this.sprintInfoData.active == 'true'">
       </label>
       <h4>{{ this.sprintInfoData.id }}</h4>
       <h4>{{ this.sprintInfoData.title }}</h4>
