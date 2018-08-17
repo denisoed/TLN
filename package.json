@@ -51,6 +51,7 @@
     }
   },
   "dependencies": {
+    "@branu-jp/v-drag": "0.0.10",
     "axios": "^0.16.1",
     "dexie": "^2.0.4",
     "mlab-data-api": "^0.2.2",

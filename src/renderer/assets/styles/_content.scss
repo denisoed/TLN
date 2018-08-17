@@ -262,7 +262,7 @@ body {
 // ----------- Active day -------------- //
 .active-sprint {
     width: 320px;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     right: 15px;
     z-index: 10;

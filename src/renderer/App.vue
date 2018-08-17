@@ -5,13 +5,14 @@
       <top-line />
       <aside-bar />
       <router-view class="component" @EventUpdateActiveSprint="updateActiveSprint"></router-view>
-      <active-sprint :sprintInfo="sprintData"/>
+      <active-sprint v-drag :sprintInfo="sprintData"/>
     </div>
   </div>
 </template>
 
 <script>
   import localDB from './services/localDB'
+  import drag from '@branu-jp/v-drag'
 
   export default {
     name: 'tln',
@@ -19,6 +20,9 @@
       return {
         sprintData: '',
       }
+    },
+    directives: { 
+      drag 
     },
     methods: {
       getActiveSprint() {
