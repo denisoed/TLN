@@ -11,6 +11,11 @@ export default new Router({
       component: require('@/components/Home').default
     },
     {
+      path: '/calendar',
+      name: 'calendar',
+      component: require('@/components/Calendar').default
+    },
+    {
       path: '/sprints',
       name: 'sprints',
       component: require('@/components/Sprint').default
