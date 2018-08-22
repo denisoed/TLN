@@ -6,7 +6,7 @@
           <a href="#"><icon name="bolt"></icon></a>
           <a href="#"><icon name="user"></icon></a>
           <a href="#"><icon name="clipboard-list"></icon></a>
-          <a href="#"><icon name="calendar-alt"></icon></a>
+          <router-link to="/calendar"><icon name="calendar-alt"/></router-link>
           <a href="#"><icon name="clock"></icon></a>
         </div>
     </div>
